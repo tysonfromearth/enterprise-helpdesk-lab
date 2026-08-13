@@ -55,6 +55,7 @@ The primary objective was to build a secure internal network running Active Dire
 │   ├── New-ADUsersFromCSV.ps1          # Automated AD Provisioning Script
 │   └── users-template.csv              # Sample onboarding CSV data
 ├── diagrams/
+│   └── network-topology.png            # Network Diagram
 └── README.md                           # Main Project Overview
 ```
 
