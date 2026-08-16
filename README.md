@@ -13,24 +13,10 @@ The primary objective was to build a secure internal network running Active Dire
 
 ## System Architecture
 
-```text
-                               [ Host Physical Network ]
-                                          │
-                              VMnet8 (NAT - Internet)
-                                          │
-                                 [ DC01.corp.local ]
-                              (Windows Server 2022)
-                          DHCP Server | DNS | AD DS
-                                          │
-                       VMnet2 (Host-Only Internal LAN)
-                                 192.168.50.0/24
-                                          │
-                 ┌────────────────────────┴────────────────────────┐
-                 │                                                 │
-        [ WORKSTATION01 ]                                  [ HELPDESK01 ]
-     (Windows 11 Enterprise)                               (Ubuntu Server 22.04)
-     Domain-Joined Client                                  osTicket / REST API
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="diagrams/network-topology-dark.png">
+  <img src="diagrams/network-topology-light.png" alt="Network Topology">
+</picture>
 
 ---
 
@@ -55,7 +41,8 @@ The primary objective was to build a secure internal network running Active Dire
 │   ├── New-ADUsersFromCSV.ps1          # Automated AD Provisioning Script
 │   └── users-template.csv              # Sample onboarding CSV data
 ├── diagrams/
-│   └── network-topology.png            # Network Diagram
+│   ├── network-topology-dark.png       # Network Diagram for dark mode
+│   └── network-topology-light.png      # Network Diagram for light mode
 └── README.md                           # Main Project Overview
 ```
 
