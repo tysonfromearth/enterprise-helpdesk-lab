@@ -77,7 +77,8 @@ The primary objective was to build a secure internal network running Active Dire
 5. **Configure ITIL Workflow**: Create the 4 Departments, 4 SLA Plans, 4 Custom Forms, and map all 8 Help Topics.
 
 6. **Enable System Cron**: Disable `Fetch on auto-cron` in the web panel and add the background cron job to the `www-data` system `crontab`:
-```title="Bash"
+
+```bash 
 */5 * * * * /usr/bin/php /var/www/html/api/cron.php > /dev/null 2>&1
 ```
 
