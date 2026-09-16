@@ -30,6 +30,19 @@ The primary objective was to build a secure internal network running Active Dire
 
 ---
 
+## Technical Features & Configuration Details
+
+* **Unified Authentication (LDAP/AD)**: Active Directory integration allows agents (`asmith`) and end-users (`jdoe`) to log in using native domain credentials.
+* **Role-Based Access Control (RBAC)**: Configured a 4-tier departmental hierarchy (`Tier 1 - Service Desk`, `Tier 2 - Field Support`, `Systems & Infrastructure`, `Networks & Operations`). Permissions enforce strict least-privilege boundaries (limiting ticket deletion while permitting linking, merging, and referral operations).
+* **Service Level Agreement (SLA) Matrix**: Configured 4 master SLA plans mapped across 24/7 runtime schedules:
+  * **Critical Incident SLA**: 1-Hour Grace Period
+  * **Infrastructure Outage SLA**: 4-Hour Grace Period
+  * **Standard System SLA**: 12-Hour Grace Period
+  * **Service Request SLA**: 48-Hour Grace Period
+* **Dynamic Data Schema**: Custom intake forms utilizing structured `key:value` database definitions and strict variable naming conventions (`user_id`, `asset_tag`, `software_name`, `connection_type`) to standardize ticket metadata intake. 
+
+---
+
 ## Repository Structure
 
 ```text
