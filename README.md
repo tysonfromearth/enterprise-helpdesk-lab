@@ -65,5 +65,21 @@ The primary objective was to build a secure internal network running Active Dire
 2. Active Directory & GPO Configuration *(Coming Soon)*
 3. osTicket Deployment & Service Desk Setup *(Coming Soon)*
 
+## Replication summary
+1. **Deploy Active Directory**: Provision Windows Server 2022 and Windows 11 Enterprise, configure sys.lab.local, and build target OUs.
+
+2. **Provision Web Server**: Install Ubuntu Server, deploy Apache, PHP 8.1, and MySQL. 
+
+3. **Deploy osTicket**: Install osTicket, configure the `php-ldap` extension, and complete the database installation wizard.
+
+4. **Bind Directory Services**: Enable the LDAP/Active Directory plugin in osTicket, set the bind credentials, and map `sAMAccountName` and `EmailAddress` attributes.
+
+5. **Configure ITIL Workflow**: Create the 4 Departments, 4 SLA Plans, 4 Custom Forms, and map all 8 Help Topics.
+
+6. **Enable System Cron**: Disable `Fetch on auto-cron` in the web panel and add the background cron job to the `www-data` system `crontab`:
+```title="Bash"
+*/5 * * * * /usr/bin/php /var/www/html/api/cron.php > /dev/null 2>&1
+```
+
 ## Author
 * **Tyson Bryant** — [GitHub](https://github.com/tysonfromearth) | [LinkedIn](https://www.linkedin.com/in/tysonfromearth/)
