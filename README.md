@@ -4,12 +4,14 @@
 ![Hypervisor](https://img.shields.io/badge/Hypervisor-VMware%20Workstation%20Pro-blue)
 ![OS](https://img.shields.io/badge/OS-Windows%20Server%202022%20%7C%20Ubuntu%2022.04-orange)
 
+An ITIL-aligned, enterprise-grade service management platform built on an **osTicket** and **Active Directory (AD DS)** infrastructure. Designed to emulate production-tier IT operations, this system integrates centralized directory services, role-based access control (RBAC), multi-tier SLA enforcement, and dynamic intake schemas to demonstrate enterprise infrastructure lifecycle management.
+
 ## Executive Summary
-This project simulates an enterprise IT environment built using **VMware Workstation Pro**. It demonstrates core IT infrastructure operations, Active Directory domain management, ticketing service deployment, and automated user lifecycle management combining **PowerShell** and **Python**.
+This project, built using **VMware Workstation Pro**, establishes an enterprise helpdesk environment integrating a Linux/Apache/PHP/MySQL (**LAMP**) service desk with a Windows Server Active Directory domain controller and automates user lifecycle management combining **PowerShell** and **Python**. 
+
+By binding osTicket directly to Active Directory via **LDAP**, the platform enforces unified identity management and automated user/agent provisioning. The environment utilizes an asynchronous Linux system daemon (`crontab`) for deterministic background task execution and SLA breach tracking, eliminating dependence on web session autocron triggers.
 
 The primary objective was to build a secure internal network running Active Directory, deploy an open-source ticketing system, and automate repetitive Help Desk onboarding tasks using code.
-
----
 
 ## System Architecture
 
@@ -41,8 +43,6 @@ The primary objective was to build a secure internal network running Active Dire
   * **Service Request SLA**: 48-Hour Grace Period
 * **Dynamic Data Schema**: Custom intake forms utilizing structured `key:value` database definitions and strict variable naming conventions (`user_id`, `asset_tag`, `software_name`, `connection_type`) to standardize ticket metadata intake. 
 
----
-
 ## Repository Structure
 
 ```text
@@ -59,15 +59,11 @@ The primary objective was to build a secure internal network running Active Dire
 └── README.md                           # Main Project Overview
 ```
 
----
-
 ## Documentation Links
 
 1. Virtual Infrastructure & Networking Setup *(Coming Soon)*
 2. Active Directory & GPO Configuration *(Coming Soon)*
 3. osTicket Deployment & Service Desk Setup *(Coming Soon)*
-
----
 
 ## Author
 * **Tyson Bryant** — [GitHub](https://github.com/tysonfromearth) | [LinkedIn](https://www.linkedin.com/in/tysonfromearth/)
